@@ -22,8 +22,8 @@ var crytpoKitties = new web3.eth.Contract(ABI, address);
             toBlock: inc
         });
         logs = logs.concat(events);
-        startBlock += 1000;
-        inc += 1000;
+        startBlock = inc +1;
+        inc = startBlock + 1000;
     }
     let events = await crytpoKitties.getPastEvents('Birth', {
         fromBlock: startBlock,
